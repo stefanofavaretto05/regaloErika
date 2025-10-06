@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCHERMATA HOME</title>
+  <style>
+    /* reset minimo */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* assicurati che l'intera pagina segua il viewport */
+    html, body { height: 100%; }
+
+    /* layout verticale che riempie la pagina */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ogni sezione occupa spazio uguale */
+    .section {
+      flex: 1;                  /* importantissimo: fa occupare 1/3 ciascuna */
+      display: flex;           /* per centrare il bottone */
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* sfondi per vedere le sezioni */
+    .section:nth-child(1) { background: black; }
+    .section:nth-child(2) { background: black; }
+    .section:nth-child(3) { background: black; }
+
+    /* il bottone riempie completamente la sezione */
+    .section > button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: black;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      font-family: 'Futura', sans-serif;
+    }
+
+    .section > button:focus { outline: none; }
+    .section > button:hover  { background: white; color: black; }
+  </style>
+</head>
+<body>
+  <div class="section"><button onclick="window.location.href='livello1.html'">LIVELLO I</button></div>
+  <div class="section"><button onclick="window.location.href='livello2.html'">LIVELLO II</button></div>
+  <div class="section"><button onclick="window.location.href='livello3.html'">LIVELLO III</button></div>
+</body>
+</html>
+
+

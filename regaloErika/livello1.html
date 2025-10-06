@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVELLO I</title>
+  <style>
+    /* Rimuove i margini e centra tutto verticalmente e orizzontalmente */
+    body {
+      margin: 0;
+      height: 100vh; /* 100% dell’altezza della finestra */
+      display: flex;
+      flex-direction: column; /* impila immagine e input uno sopra l’altro */
+      align-items: center; /* centra orizzontalmente */
+      justify-content: center; /* centra verticalmente */
+      background-color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      width: 500px; /* puoi cambiare la dimensione */
+      height: auto; /* mantiene le proporzioni */
+      display: block;
+      position: fixed;
+      top: 150px;
+      
+    }
+
+    input[type="text"] {
+      margin-top: 20px; /* spazio sotto l’immagine */
+      padding: 10px;
+      font-size: 18px;
+      width: 150px;
+      text-align: center;
+      border: none;
+      font-family: 'Futura', sans-serif;
+      
+    }
+    .home > button{
+        border: none;
+        background: none;
+        font-family: 'Futura', sans-serif;
+        position: fixed;
+        bottom: 30px;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    .verifica button{
+        border: none;
+        background: none;
+        font-family: 'Futura', sans-serif;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    #messaggio {
+      margin-top: 50px;
+      font-weight: bold;
+      font-size: 40px;
+      font-family: 'Futura', sans-serif;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- immagine -->
+  <img src="rebus.png" alt="La mia immagine">
+
+  <!-- input numerico -->
+  <input type="text" id="inputTesto" placeholder="Inserisci Risposta">
+  <div class="verifica"><button onclick="controlla()">VERIFICA</button></div>
+
+  <div id="messaggio"></div>
+
+  <script>
+    function controlla() {
+      const input = document.getElementById('inputTesto').value.trim(); // prende il valore e rimuove spazi
+      const messaggio = document.getElementById('messaggio');
+
+      // parola corretta
+      const parolaCorretta = "31100";
+
+      if (input.toLowerCase() === parolaCorretta.toLowerCase()) {
+        messaggio.textContent = "45°46'59.6N 12°29'32.1E";
+        messaggio.style.color = "black";
+      } else {
+        messaggio.textContent = "Sbagliato, riprova!";
+        messaggio.style.color = "red";
+      }
+    }
+  </script>
+
+  <div class="home"><button onclick="window.location.href='regaloErika.html'">HOME</button></div>
+
+</body>
+</html>
